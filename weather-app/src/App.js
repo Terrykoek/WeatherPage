@@ -18,7 +18,18 @@ const App = () => {
   const getWeatherData = (city) => {
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=6b48c660263afbf53c9e3b9297b58b16`;
 
-
+  const getCurrentDateTime = () => {
+    const currentDate = new Date();
+    const options = {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: 'numeric',
+      minute: 'numeric',
+      hour12: true,
+    };
+    return currentDate.toLocaleString('en-US', options);
+  };
     // Use fetch for AJAX
     fetch(apiUrl)
       .then((response) => {
@@ -33,6 +44,19 @@ const App = () => {
         setWeatherData(null); // Clear weather data on error
       }
       );
+  };
+
+  const getCurrentDateTime = () => {
+    const currentDate = new Date();
+    const options = {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: 'numeric',
+      minute: 'numeric',
+      hour12: true,
+    };
+    return currentDate.toLocaleString('en-US', options);
   };
 
   const handleSearch = (city) => {
@@ -53,7 +77,9 @@ const App = () => {
     <div >      
     <SearchBar onSearch={handleSearch} />
     {weatherData ? (
+        <>
         <WeatherDisplay weatherData={weatherData} />
+      </>      
       ) : (
         <p>{weatherData === null ? 'Not found' : 'Loading...'}</p>
       )}      <h3>Search History</h3>
@@ -66,6 +92,7 @@ const App = () => {
               style={{ cursor: 'pointer', marginLeft: '8px' }}
               onClick={() => handleSearch(city)}
             >
+              {getCurrentDateTime()} 
               🔍
             </span>
             <span
