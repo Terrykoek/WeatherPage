@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import SearchBar from './SearchBar';
 import WeatherDisplay from './WeatherDisplay';
-import background from './bg-dark.png'
 
 const App = () => {
   const [weatherData, setWeatherData] = useState(null);
@@ -51,10 +50,13 @@ const App = () => {
   };
 
   return (
-    <div style={{ height: '100vh', backgroundImage: `url(${background})`, backgroundSize: 'cover'}}>      
+    <div >      
     <SearchBar onSearch={handleSearch} />
-      <WeatherDisplay weatherData={weatherData} />
-      <h3>Search History</h3>
+    {weatherData ? (
+        <WeatherDisplay weatherData={weatherData} />
+      ) : (
+        <p>{weatherData === null ? 'Not found' : 'Loading...'}</p>
+      )}      <h3>Search History</h3>
       <ul>
       {searchHistory.map((city, index) => (
           <li key={index}>
