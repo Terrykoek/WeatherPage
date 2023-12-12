@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import SearchBar from './SearchBar';
 import WeatherDisplay from './WeatherDisplay';
+import './App.css'; 
 
 const App = () => {
   const [weatherData, setWeatherData] = useState(null);
@@ -18,18 +19,6 @@ const App = () => {
   const getWeatherData = (city) => {
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=6b48c660263afbf53c9e3b9297b58b16`;
 
-  const getCurrentDateTime = () => {
-    const currentDate = new Date();
-    const options = {
-      year: 'numeric',
-      month: '2-digit',
-      day: '2-digit',
-      hour: 'numeric',
-      minute: 'numeric',
-      hour12: true,
-    };
-    return currentDate.toLocaleString('en-US', options);
-  };
     // Use fetch for AJAX
     fetch(apiUrl)
       .then((response) => {
@@ -74,7 +63,7 @@ const App = () => {
   };
 
   return (
-    <div >      
+    <div>
     <SearchBar onSearch={handleSearch} />
     {weatherData ? (
         <>

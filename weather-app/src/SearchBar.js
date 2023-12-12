@@ -1,5 +1,7 @@
 // src/components/SearchBar.js
 import React, { useState } from 'react';
+import searchIcon from './searchButton.png';
+import './SearchBar.css';
 
 const SearchBar = ({ onSearch }) => {
   const [city, setCity] = useState('');
@@ -12,15 +14,20 @@ const SearchBar = ({ onSearch }) => {
     onSearch(city);
     setCity('');
   };
+
   const handleKeyPress = (e) => {
     if (e.key === 'Enter') {
       handleSearch();
     }
   };
+
   return (
-    <div>
-      <input type="text" value={city} onChange={handleInputChange} onKeyPress={handleKeyPress}/>
-      <button onClick={handleSearch}>Search</button>
+    <div className='searchbar'>
+      <input type="text" value={city} onChange={handleInputChange} onKeyPress={handleKeyPress} placeholder="Country"
+/>
+      <button className='searchButton' onClick={handleSearch}>
+        <img src={searchIcon} alt="Search" className="searchIcon" />
+      </button>    
     </div>
   );
 };
