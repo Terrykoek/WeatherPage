@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import SearchBar from './SearchBar';
 import WeatherDisplay from './WeatherDisplay';
+import background from './bg-dark.png'
 
 const App = () => {
   const [weatherData, setWeatherData] = useState(null);
@@ -16,8 +17,7 @@ const App = () => {
   }, [searchHistory]);
 
   const getWeatherData = (city) => {
-    const apiKey = '6b48c660263afbf53c9e3b9297b58b16';
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=singapore&units=metric&appid=6b48c660263afbf53c9e3b9297b58b16`;
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=6b48c660263afbf53c9e3b9297b58b16`;
 
 
     // Use fetch for AJAX
@@ -29,7 +29,11 @@ const App = () => {
         return response.json();
       })
       .then((data) => setWeatherData(data))
-      .catch((error) => console.error('Error fetching weather data:', error));
+      .catch((error) => {
+        console.error('Error fetching weather data:', error)
+        setWeatherData(null); // Clear weather data on error
+      }
+      );
   };
 
   const handleSearch = (city) => {
@@ -40,15 +44,35 @@ const App = () => {
     getWeatherData(city);
   };
 
+  const handleDelete = (index) => {
+    const updatedHistory = [...searchHistory];
+    updatedHistory.splice(index, 1);
+    setSearchHistory(updatedHistory);
+  };
+
   return (
-    <div>
-      <h1>Weather App</h1>
-      <SearchBar onSearch={handleSearch} />
+    <div style={{ height: '100vh', backgroundImage: `url(${background})`, backgroundSize: 'cover'}}>      
+    <SearchBar onSearch={handleSearch} />
       <WeatherDisplay weatherData={weatherData} />
       <h3>Search History</h3>
       <ul>
-        {searchHistory.map((city, index) => (
-          <li key={index}>{city}</li>
+      {searchHistory.map((city, index) => (
+          <li key={index}>
+            {city}
+            {}
+            <span
+              style={{ cursor: 'pointer', marginLeft: '8px' }}
+              onClick={() => handleSearch(city)}
+            >
+              🔍
+            </span>
+            <span
+              style={{ cursor: 'pointer', marginLeft: '8px' }}
+              onClick={() => handleDelete(index)}
+            >
+              🗑️
+            </span>
+          </li>
         ))}
       </ul>
     </div>

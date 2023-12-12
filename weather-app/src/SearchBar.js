@@ -12,10 +12,14 @@ const SearchBar = ({ onSearch }) => {
     onSearch(city);
     setCity('');
   };
-
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleSearch();
+    }
+  };
   return (
     <div>
-      <input type="text" value={city} onChange={handleInputChange} />
+      <input type="text" value={city} onChange={handleInputChange} onKeyPress={handleKeyPress}/>
       <button onClick={handleSearch}>Search</button>
     </div>
   );
