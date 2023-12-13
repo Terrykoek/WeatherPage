@@ -18,7 +18,7 @@ h1 {
   border-radius: 40px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 112px auto; /* Adjust margin to create space between SearchBar and WeatherDisplay */
-  width: 80%; /* Adjusted width property */
+  width: 90%; /* Adjusted width property */
   max-width: 700px;
   max-height: 1145px;
   background-color: rgba(255, 255, 255, 0.2);
@@ -79,7 +79,20 @@ h1 {
   }
 
   .search-history-item-content {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align items to the start (left) */
+    justify-content: space-between;
     font-size: medium;
     height: auto;
   }
+
+  .search-history-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Align buttons to the right */
+  }
+
+
 }
+
