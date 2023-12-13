@@ -34,12 +34,13 @@
 
 .weather-info {
   display: flex;
-  justify-content: space-between; /* Spread elements evenly */
+  justify-content: space-evenly; /* Spread elements evenly */
   align-items: center; /* Align items vertically at the center */
   margin-top: 20px; /* Increase margin at the top for more spacing */
   color: rgba(102, 102, 102, 1);
   margin-bottom: 10px;
   margin-top: 20px;
+  margin-right: auto;
 }
 
 .weather-info .weather-data-name {
@@ -56,9 +57,10 @@
 }
 
 .weather-info .weather-small-info span {
-  margin-right: 20px; /* Add margin to the right for spacing */
+  margin-right: 50px; /* Add margin to the right for spacing */
+  margin-left: 40px;
+  white-space: nowrap; /* Prevent text from wrapping to the next line */
 }
-
 .weather-image {
   position: absolute; /* Set the image to absolute positioning */
   top: -100px; /* Position it at the top */
@@ -87,10 +89,6 @@
     margin-top: -30px;
   }
 
-  .weather-info {
-    flex-direction: row; /* Change to row layout for smaller screens */
-    justify-content: space-between; /* Add space between columns */
-  }
 
   .weather-info .weather-data-name {
     margin-bottom: 10px; /* Add margin to the bottom for spacing */
