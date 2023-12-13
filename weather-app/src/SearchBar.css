@@ -5,6 +5,7 @@
   justify-content: center;
   align-items: center;
   margin-top: 30px; /* Optional: Add margin to the top for spacing */
+  background-color: transparent;
 }
 
 input {
@@ -13,14 +14,18 @@ input {
   height: 60px;
   margin-right: 20px; /* Optional: Add margin to the right for spacing */
   border-radius: 20px; /* Add rounded edges */
-  border: 1px solid purple;
-  padding-left:10px
+  border: 1px solid #D8BFD8;
+  padding-left:10px;
+  background-color: transparent;
+  outline: none; /* Remove the default focus outline */
+  padding-left: 30px; /* Adjust padding-left to move both text and placeholder to the right */
 }
+
 input::placeholder {
   font-style: Noto Sans; /* Example: Make the placeholder text italic */
-  color: purple; /* Example: Set a different color for the placeholder text */
-  transform: translateY(-20px); /* Shift the placeholder text 3 pixels higher */
+  transform: translateY(-25px); /* Shift the placeholder text 3 pixels higher */
   font-size: 10px;
+  color: #000000;
 }
 
 .searchButton {

@@ -1,0 +1,61 @@
+.parent-container {
+    position: relative;
+    top: 0; /* Position it at the top */
+  }
+  
+  .weather-box {
+    position: relative;
+    padding: 20px;
+    margin: 1px auto 20px; /* Adjust margin-top to move it down */
+    max-width: 700px;
+    max-height: 1145px;
+    top: 0; /* Position it at the top */
+  }
+  
+  .weather-content {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+  }
+  
+  
+  .mainTemp {
+    font-size: 60px; /* Set the font size for the main temperature */
+    font-weight: bold; /* Make the main temperature bold */
+    color: rgba(108, 64, 181, 1);
+    margin: 0; /* Remove margin to eliminate spacing around the text */
+  }
+
+  .weather-info {
+    display: flex;
+    justify-content: space-between; /* Spread elements evenly */
+    align-items: center; /* Align items vertically at the center */
+    margin-top: 20px; /* Increase margin at the top for more spacing */
+    color: rgba(102, 102, 102, 1)
+  }
+  
+  .weather-info .weather-data-name {
+    /* Add your styles for the weatherData name here */
+    font-weight: bold;
+    font-size: 18px;
+    color: rgba(102, 102, 102, 1);
+  }
+
+  .weather-image {
+    position: absolute; /* Set the image to absolute positioning */
+    top: -100px; /* Position it at the top */
+    right: -10px; /* Adjust the distance from the right side of the .weather-box */
+    width: 300px; /* Set the width of the image */
+    height: 300px; /* Set the height of the image */
+    border-radius: 50%; /* Make it a circle by setting border-radius to half of the width/height */
+  }
+  @media (max-width: 767px) {
+    .weather-image {
+      position: relative; /* Change to relative positioning for smaller screens */
+      top: 0;
+      right: 0;
+      width: 100%; /* Make the image take full width */
+      height: auto; /* Maintain the aspect ratio */
+      border-radius: 0; /* Remove border-radius for smaller screens */
+    }
+  }

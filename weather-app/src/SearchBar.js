@@ -1,6 +1,6 @@
 // src/components/SearchBar.js
 import React, { useState } from 'react';
-import searchIcon from './searchButton.png';
+import searchIcon from './searchIcon.png';
 import './SearchBar.css';
 
 const SearchBar = ({ onSearch }) => {

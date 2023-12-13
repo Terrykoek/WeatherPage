@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import SearchBar from './SearchBar';
 import WeatherDisplay from './WeatherDisplay';
 import './App.css'; 
+import searchButton from './searchButton.png';
+import deleteButton from './deleteButton.png';
 
 const App = () => {
   const [weatherData, setWeatherData] = useState(null);
@@ -49,6 +51,8 @@ const App = () => {
   };
 
   const handleSearch = (city) => {
+    console.log('@@@@@@@@@@@@@@');
+
     // Update search history
     setSearchHistory([city, ...searchHistory.slice(0, 4)]); // Limit to 5 items
 
@@ -64,37 +68,52 @@ const App = () => {
 
   return (
     <div>
-    <SearchBar onSearch={handleSearch} />
-    {weatherData ? (
-        <>
-        <WeatherDisplay weatherData={weatherData} />
-      </>      
-      ) : (
-        <p>{weatherData === null ? 'Not found' : 'Loading...'}</p>
-      )}      <h3>Search History</h3>
-      <ul>
-      {searchHistory.map((city, index) => (
-          <li key={index}>
-            {city}
-            {}
-            <span
-              style={{ cursor: 'pointer', marginLeft: '8px' }}
-              onClick={() => handleSearch(city)}
-            >
-              {getCurrentDateTime()} 
-              🔍
-            </span>
-            <span
-              style={{ cursor: 'pointer', marginLeft: '8px' }}
-              onClick={() => handleDelete(index)}
-            >
-              🗑️
-            </span>
-          </li>
-        ))}
-      </ul>
+      <SearchBar onSearch={handleSearch} />
+      <div className='app-container'>
+        <div className="weather-container">
+          {weatherData ? (
+            <>
+              <WeatherDisplay weatherData={weatherData} />
+              <div className='search-history-box'>
+                <h1>Search History</h1>
+                <ul>
+                  {searchHistory.map((city, index) => (
+                    <li key={index} className="search-history-item">
+                      <div className="search-history-item-content">
+                        <span>{city}</span>
+                        <span style={{ marginLeft: 'auto' }}>
+                          {getCurrentDateTime()}
+                        </span>
+                        <div className="search-history-actions">
+                          <span
+                            style={{ cursor: 'pointer', marginRight: '-10px' }}
+                            onClick={() => handleSearch(city)}
+                          >
+                            <img src={searchButton} alt="Search" />
+                          </span>
+                          <span
+                            style={{ cursor: 'pointer', marginLeft: 'auto' }}
+                            onClick={() => handleDelete(index)}
+                          >
+                            <img src={deleteButton} alt="Delete" />
+                          </span>
+                        </div>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </>
+          ) : (
+            weatherData === null && <div className="not-found-box">
+              <p>Not found</p>
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 };
+
 
 export default App;
