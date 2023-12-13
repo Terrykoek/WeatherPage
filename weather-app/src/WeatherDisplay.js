@@ -31,6 +31,8 @@ const WeatherDisplay = ({ weatherData }) => {
             <span className='weather-data-name'>
               {weatherData.name}, {weatherData.sys.country}
             </span>
+            <div className='weather-small-info'>
+
             <span>
               {getCurrentDateTime()} 
             </span>
@@ -39,6 +41,7 @@ const WeatherDisplay = ({ weatherData }) => {
               {weatherData.main.humidity}%
             </span>
             <span>{weatherData.weather[0].description}</span>
+            </div>
           </div>
           </div>
         )}

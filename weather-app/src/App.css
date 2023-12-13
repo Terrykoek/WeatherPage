@@ -18,10 +18,10 @@ h1 {
   border-radius: 40px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 112px auto; /* Adjust margin to create space between SearchBar and WeatherDisplay */
+  width: 80%; /* Adjusted width property */
   max-width: 700px;
   max-height: 1145px;
   background-color: rgba(255, 255, 255, 0.2);
-
 }
 
 
@@ -66,8 +66,11 @@ h1 {
 
 @media (max-width: 767px) {
   .app-container {
-    margin: 20px auto;
+    margin: 10px auto;
     padding: 10px;
+    margin-top: 139px;
+    margin-left: 10px;
+    width: 100%;
   }
 
   .search-history-box {

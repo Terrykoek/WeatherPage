@@ -43,10 +43,20 @@
 }
 
 .weather-info .weather-data-name {
-  /* Add your styles for the weatherData name here */
   font-weight: bold;
   font-size: 18px;
   color: rgba(102, 102, 102, 1);
+  white-space: nowrap; /* Prevent text from wrapping to the next line */
+}
+
+.weather-info .weather-small-info {
+  display: flex; /* Display flex to keep items in the same row */
+  align-items: center; /* Align items vertically at the center */
+  white-space: nowrap; /* Prevent text from wrapping to the next line */
+}
+
+.weather-info .weather-small-info span {
+  margin-right: 20px; /* Add margin to the right for spacing */
 }
 
 .weather-image {
@@ -58,13 +68,39 @@
   border-radius: 50%; /* Make it a circle by setting border-radius to half of the width/height */
 }
 
-@media (max-width: 767px) {
+@media (max-width: 480px) {
   .weather-image {
-    position: relative; /* Change to relative positioning for smaller screens */
-    top: 0;
-    right: 0;
+    position: absolute; /* Change to relative positioning for smaller screens */
+    top: -120px;
     width: 100%; /* Make the image take full width */
+    max-width: 200px; /* Set the maximum width of the image for smaller screens */
     height: auto; /* Maintain the aspect ratio */
     border-radius: 0; /* Remove border-radius for smaller screens */
+  }
+  .mainTemp {
+    position: relative;
+    margin-left: -5px;
+    font-size: 50px;
+  }
+  .high-low {
+    position: relative;
+    margin-top: -30px;
+  }
+
+  .weather-info {
+    flex-direction: row; /* Change to row layout for smaller screens */
+    justify-content: space-between; /* Add space between columns */
+  }
+
+  .weather-info .weather-data-name {
+    margin-bottom: 10px; /* Add margin to the bottom for spacing */
+  }
+
+  .weather-info .weather-small-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: auto;
+    margin-top: 0;
   }
 }
