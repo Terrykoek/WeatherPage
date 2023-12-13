@@ -1,7 +1,7 @@
 body {
   margin: 0; /* Remove default body margin */
   padding: 0; /* Remove default body padding */
-  background-image: url('./bg-light.png');
+  background-image: url('./assets/bg-light.png');
   background-size: cover;
   min-height: 100vh;
 }
@@ -62,4 +62,21 @@ h1 {
   height:60px;
   font-size: large;
   font: Noto Sans;
+}
+
+@media (max-width: 767px) {
+  .app-container {
+    margin: 20px auto;
+    padding: 10px;
+  }
+
+  .search-history-box {
+    margin-top: -10px;
+    padding: 10px;
+  }
+
+  .search-history-item-content {
+    font-size: medium;
+    height: auto;
+  }
 }

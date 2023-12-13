@@ -1,6 +1,6 @@
 import React from 'react';
 import './WeatherDisplay.css';
-import sunIcon from './sun.png';
+import sunIcon from './assets/sun.png';
 
 const WeatherDisplay = ({ weatherData }) => {
   const getCurrentDateTime = () => {

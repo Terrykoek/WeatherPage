@@ -3,8 +3,8 @@ import React, { useState, useEffect } from 'react';
 import SearchBar from './SearchBar';
 import WeatherDisplay from './WeatherDisplay';
 import './App.css'; 
-import searchButton from './searchButton.png';
-import deleteButton from './deleteButton.png';
+import searchButton from './assets/searchButton.png';
+import deleteButton from './assets/deleteButton.png';
 
 const App = () => {
   const [weatherData, setWeatherData] = useState(null);
@@ -57,8 +57,6 @@ const App = () => {
 
     // Fetch weather data for the searched city
     getWeatherData(city);
-    console.log('@@@@@@@@@@@@@@', weatherData);
-
   };
 
   const handleDelete = (index) => {
