@@ -24,7 +24,7 @@ const WeatherDisplay = ({ weatherData }) => {
             <img src={sunIcon} alt="Weather Icon" className="weather-image" />
             <p>Today's Weather</p>
             <h1 className='mainTemp'>{weatherData.main.temp}°</h1>
-            <p>
+            <p className='high-low'>
               H: {weatherData.main.temp_max}°, L: {weatherData.main.temp_min}°
             </p>
             <div className='weather-info'>

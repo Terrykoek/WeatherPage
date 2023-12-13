@@ -51,13 +51,14 @@ const App = () => {
   };
 
   const handleSearch = (city) => {
-    console.log('@@@@@@@@@@@@@@');
 
     // Update search history
     setSearchHistory([city, ...searchHistory.slice(0, 4)]); // Limit to 5 items
 
     // Fetch weather data for the searched city
     getWeatherData(city);
+    console.log('@@@@@@@@@@@@@@', weatherData);
+
   };
 
   const handleDelete = (index) => {
@@ -80,7 +81,7 @@ const App = () => {
                   {searchHistory.map((city, index) => (
                     <li key={index} className="search-history-item">
                       <div className="search-history-item-content">
-                        <span>{city}</span>
+                        <span>{city} </span>
                         <span style={{ marginLeft: 'auto' }}>
                           {getCurrentDateTime()}
                         </span>

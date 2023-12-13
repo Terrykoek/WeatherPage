@@ -23,7 +23,7 @@ input {
 
 input::placeholder {
   font-style: Noto Sans; /* Example: Make the placeholder text italic */
-  transform: translateY(-25px); /* Shift the placeholder text 3 pixels higher */
+  transform: translateY(-20px); /* Shift the placeholder text 3 pixels higher */
   font-size: 10px;
   color: #000000;
 }
