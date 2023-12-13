@@ -1,15 +1,15 @@
 .parent-container {
   position: relative;
-  top: 0; /* Position it at the top */
+  top: 0; 
 }
 
 .weather-box {
   position: relative;
   padding: 20px;
-  margin: 1px auto 20px; /* Adjust margin-top to move it down */
+  margin: 1px auto 20px; 
   max-width: 700px;
   max-height: 1145px;
-  top: 0; /* Position it at the top */
+  top: 0;
 }
 
 .weather-content {
@@ -19,8 +19,8 @@
 }
 
 .mainTemp {
-  font-size: 100px; /* Set the font size for the main temperature */
-  font-weight: bold; /* Make the main temperature bold */
+  font-size: 100px; 
+  font-weight: bold; 
   color: rgba(108, 64, 181, 1);
   width: 81px;
   margin-top: -20px;
@@ -34,9 +34,9 @@
 
 .weather-info {
   display: flex;
-  justify-content: space-evenly; /* Spread elements evenly */
-  align-items: center; /* Align items vertically at the center */
-  margin-top: 20px; /* Increase margin at the top for more spacing */
+  justify-content: space-evenly; 
+  align-items: center; 
+  margin-top: 20px; 
   color: rgba(102, 102, 102, 1);
   margin-bottom: 10px;
   margin-top: 20px;
@@ -47,38 +47,38 @@
   font-weight: bold;
   font-size: 18px;
   color: rgba(102, 102, 102, 1);
-  white-space: nowrap; /* Prevent text from wrapping to the next line */
+  white-space: nowrap; 
 }
 
 .weather-info .weather-small-info {
-  display: flex; /* Display flex to keep items in the same row */
-  align-items: center; /* Align items vertically at the center */
-  white-space: nowrap; /* Prevent text from wrapping to the next line */
+  display: flex; 
+  align-items: center; 
+  white-space: nowrap; 
 }
 
 .weather-info .weather-small-info span {
-  margin-right: 50px; /* Add margin to the right for spacing */
+  margin-right: 50px; 
   margin-left: 40px;
-  white-space: nowrap; /* Prevent text from wrapping to the next line */
+  white-space: nowrap; 
 }
 .weather-image {
-  position: absolute; /* Set the image to absolute positioning */
-  top: -100px; /* Position it at the top */
-  right: -10px; /* Adjust the distance from the right side of the .weather-box */
-  width: 300px; /* Set the width of the image */
-  height: 300px; /* Set the height of the image */
-  border-radius: 50%; /* Make it a circle by setting border-radius to half of the width/height */
+  position: absolute; 
+  top: -100px; 
+  right: -10px;
+  width: 300px; 
+  height: 300px;
+  border-radius: 50%; 
 }
 
 @media (max-width: 480px) {
   .weather-image {
-    position: absolute; /* Change to relative positioning for smaller screens */
+    position: absolute; 
     top: -120px;
-    width: 100%; /* Make the image take full width */
-    max-width: 200px; /* Set the maximum width of the image for smaller screens */
-    height: auto; /* Maintain the aspect ratio */
+    width: 100%; 
+    max-width: 200px; 
+    height: auto; 
     margin-right: 20px;
-    border-radius: 0; /* Remove border-radius for smaller screens */
+    border-radius: 0; 
   }
   .mainTemp {
     position: relative;
@@ -92,7 +92,7 @@
 
 
   .weather-info .weather-data-name {
-    margin-bottom: 10px; /* Add margin to the bottom for spacing */
+    margin-bottom: 10px; 
   }
 
   .weather-info .weather-small-info {

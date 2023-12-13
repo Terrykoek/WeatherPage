@@ -1,10 +1,8 @@
-/* src/components/SearchBar.css */
-
 .searchbar {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 30px; /* Optional: Add margin to the top for spacing */
+  margin-top: 30px; 
   background-color: transparent;
 }
 
@@ -12,44 +10,45 @@ input {
   font-size: 20px;
   width: 620px;
   height: 60px;
-  margin-right: 20px; /* Optional: Add margin to the right for spacing */
-  border-radius: 20px; /* Add rounded edges */
+  margin-right: 20px; 
+  border-radius: 20px; 
   border: 1px solid #D8BFD8;
   padding-left: 10px;
   background-color: transparent;
-  outline: none; /* Remove the default focus outline */
-  padding-left: 30px; /* Adjust padding-left to move both text and placeholder to the right */
+  outline: none; 
+  padding-left: 30px; 
 }
 
 input::placeholder {
-  font-style: Noto Sans; /* Example: Make the placeholder text italic */
-  transform: translateY(-20px); /* Shift the placeholder text 3 pixels higher */
+  font-style: Noto Sans; 
+  transform: translateY(-20px); 
   font-size: 10px;
   color: #000000;
 }
 
 .searchButton {
   cursor: pointer;
-  border: none; /* Remove button border */
-  padding: 0; /* Remove button padding */
-  margin: 0; /* Remove button margin */
-  background-color: transparent; /* Make the background transparent */
+  border: none; 
+  padding: 0; 
+  margin: 0; 
+  background-color: transparent;
 }
 
 .searchIcon {
-  width: 60px; /* Set the width based on your icon size */
-  height: 60px; /* Set the height based on your icon size */
+  width: 60px;
+  height: 60px; 
 }
 
 @media (max-width: 767px) {
   input {
-    width: 80%; /* Make the input take full width on smaller screens */
-    margin: 10px; /* Increase both left and right margins */
+    width: 90%;
+    margin: 10px;
   }
   .searchButton {
-    margin-right: 10px; /* Add margin to the right of the search button for mobile view */
+    margin-right: auto; 
   }
   .searchbar {
-    margin-right: -50px; /* Add margin to the right of the search button for mobile view */
+    margin: auto; 
+    margin-right: auto;
   }
 }

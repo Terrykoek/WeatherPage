@@ -1,4 +1,3 @@
-// src/App.js
 import React, { useState, useEffect } from 'react';
 import SearchBar from './SearchBar';
 import WeatherDisplay from './WeatherDisplay';
@@ -11,7 +10,6 @@ const App = () => {
   const [searchHistory, setSearchHistory] = useState([]);
 
   useEffect(() => {
-    // Fetch weather data for the first city in the search history
     if (searchHistory.length > 0) {
       const lastSearchedCity = searchHistory[0];
       getWeatherData(lastSearchedCity);
@@ -32,7 +30,7 @@ const App = () => {
       .then((data) => setWeatherData(data))
       .catch((error) => {
         console.error('Error fetching weather data:', error)
-        setWeatherData(null); // Clear weather data on error
+        setWeatherData(null); 
       }
       );
   };
@@ -51,11 +49,7 @@ const App = () => {
   };
 
   const handleSearch = (city) => {
-
-    // Update search history
-    setSearchHistory([city, ...searchHistory.slice(0, 4)]); // Limit to 5 items
-
-    // Fetch weather data for the searched city
+    setSearchHistory([city, ...searchHistory.slice(0, 4)]); 
     getWeatherData(city);
   };
 

@@ -1,4 +1,3 @@
-// src/components/SearchBar.js
 import React, { useState } from 'react';
 import searchIcon from './assets/searchIcon.png';
 import './SearchBar.css';
